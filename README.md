@@ -1,8 +1,8 @@
-Nom del sistema operatiu i breu descripció (2–3 línies).
-CosmOS: 
+Nom del sistema operatiu i breu descripció:
+NitroOS: Es el nombre de nuestro sistema operativo a desarrollar con CosmOS. 
 
-Noms dels membres del grup.
-By: Noha i Javier
+Noms dels membres del grup:
+Noha i Javier
 
-Logo inserit o enllaçat des de la carpeta assets/.
+Logo:
 ![Logo del projecte](src/logo.png)
