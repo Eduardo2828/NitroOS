@@ -1,0 +1,15 @@
+lc (llistar contingut)
+cdir (canviar directori)
+hcdir (fer directori)
+eldir (eliminar directori)
+mc (mostrar contingut fitxer)
+
+sos
+version
+memoria
+tf (tiempo de funcionamiento)
+
+
+lp (limpiar pantalla)
+scrib (escribir)
+adios/hastaluego (apagar/reiniciar)
