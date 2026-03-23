@@ -82,7 +82,7 @@ namespace NitroOS
                 Console.WriteLine("scrib       - Permet escriure text en pantalla o en un fitxer");
                 Console.WriteLine("adeu/fora   - Apaga o reinicia el sistema segons l’opció triada");
 
-                Console.WriteLine("==============================");
+                Console.WriteLine("=============================================");
             }
         }
     }
