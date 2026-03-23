@@ -1,17 +1,17 @@
 Gestió de fitxers i directoris:
 - lc (Mostra tots els fitxers i carpetes que hi ha dins del directori actual)
-- cdir (Canvia el directori actual a un altre especificat.)
-- hcdir (Crea un nou directori (carpeta) amb el nom que li indiquis.)
-- eldir (Elimina un directori especificat (només si està buit o amb advertiment)
-- mc (Mostra el contingut d’un fitxer en pantalla sense obrir un editor.)
+- cdir (Canvia el directori actual a un altre especificat)
+- hcdir (Crea un nou directori (carpeta) amb el nom que li indiquis)
+- eldir (Elimina un directori especificat (només si està buit o amb advertiment))
+- mc (Mostra el contingut d’un fitxer en pantalla sense obrir un editor)
 
 Informació del sistema:
-- sos (Mostra l’ajuda o llistat de totes les comandes disponibles amb una breu descripció.)
-- edicio (Mostra la versió del sistema operatiu.)
-- seemem (Mostra la memòria disponible i l’ús actual.)
-- tf (Mostra el temps que el sistema ha estat funcionant des de l’últim reinici.)
+- sos (Mostra l’ajuda o llistat de totes les comandes disponibles amb una breu descripció)
+- edicio (Mostra la versió del sistema operatiu)
+- seemem (Mostra la memòria disponible i l’ús actual)
+- tf (Mostra el temps que el sistema ha estat funcionant des de l’últim reinici)
 
 Útils:
-- lp (Neteja la pantalla de tot el que s’hi mostra.)
-- scrib (Permet escriure text en pantalla o en un fitxer.)
-- adios/hastaluego (Apaga o reinicia el sistema segons l’opció que triïs)
+- lp (Neteja la pantalla de tot el que s’hi mostra)
+- scrib (Permet escriure text en pantalla o en un fitxer)
+- adeu/fora (Apaga o reinicia el sistema segons l’opció que triïs)
