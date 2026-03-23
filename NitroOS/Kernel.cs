@@ -66,7 +66,7 @@ namespace NitroOS
                     default:
                         Console.WriteLine("Comanda no reconeguda. Escriu 'sos'");
                         break;
-                } 
+                }
             }
 
             // COMANDA SOS
