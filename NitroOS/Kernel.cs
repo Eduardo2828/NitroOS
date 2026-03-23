@@ -19,7 +19,7 @@ namespace NitroOS
 
             // Versión del SO
             Console.WriteLine("cosmoOS v1.0 - Boot Sequence");
-            Console.WriteLine("Desarrollado por Eduardo - Granollers, 2026");
+            Console.WriteLine("Desenvolupament per Eduardo, Noha i Marc - Granollers, 2026");
             Console.Beep(1000, 200);  // Sonido boot [web:40]
 
             // Logo ASCII (centrado aprox., ajusta líneas)
@@ -32,15 +32,54 @@ namespace NitroOS
   | |__| | (_| | | | (_| | (_|
    \_____|\__,_| |_|\__,_|\__,|
 ");
-            Console.WriteLine("    Bienvenido al Sistema Operativo Básico");
+            Console.WriteLine("Benvingut al Sistema Operatiu Basic");
             Console.ResetColor();
 
             // Pausa para ver boot (luego inicia shell)
-            Console.WriteLine("\nPresiona Enter para shell...");
+            Console.WriteLine("\nPresiona Enter per a la shell...");
             Console.ReadLine();
 
-            // Aquí inicia tu shell básica
-            // while(true) { string cmd = Console.ReadLine(); ... }
+            // SHELL
+            while (true)
+            {
+                Console.Write("NitroOS> ");
+                string cmd = Console.ReadLine();
+
+                if (cmd == "sos")
+                {
+                    ShowHelp();
+                }
+                else
+                {
+                    Console.WriteLine("Comanda no reconeguda. Escriu 'sos'");
+                }
+            }
+
+            // COMANDA HELP
+            void ShowHelp()
+            {
+                Console.WriteLine("===== LLISTAT DE COMANDES =====");
+
+                Console.WriteLine("\n--- Gestió de fitxers i directoris ---");
+                Console.WriteLine("lc       - Mostra tots els fitxers i carpetes del directori actual");
+                Console.WriteLine("cdir     - Canvia el directori actual a un altre especificat");
+                Console.WriteLine("hcdir    - Crea un nou directori amb el nom indicat");
+                Console.WriteLine("eldir    - Elimina un directori especificat (només si està buit o amb advertiment)");
+                Console.WriteLine("mc       - Mostra el contingut d’un fitxer sense obrir editor");
+
+                Console.WriteLine("\n--- Informació del sistema ---");
+                Console.WriteLine("sos      - Mostra l’ajuda o llistat de totes les comandes disponibles");
+                Console.WriteLine("edicio   - Mostra la versió del sistema operatiu");
+                Console.WriteLine("seemem   - Mostra la memòria disponible i ús actual");
+                Console.WriteLine("tf       - Mostra el temps que el sistema ha estat funcionant des de l’últim reinici");
+
+                Console.WriteLine("\n--- Útils ---");
+                Console.WriteLine("lp               - Neteja la pantalla");
+                Console.WriteLine("scrib            - Permet escriure text en pantalla o en un fitxer");
+                Console.WriteLine("adios/hastaluego - Apaga o reinicia el sistema segons l’opció");
+
+                Console.WriteLine("==============================");
+            }
         }
     }
 }
