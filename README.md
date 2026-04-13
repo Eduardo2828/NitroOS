@@ -1,4 +1,4 @@
-**NitroOS**
+**NitroOS**🚀
 
 *Descripció*: NitroOS és el nostra propi sistema operatiu que hem desenvolupat amb CosmOS. Uilitza el llenguatge de C#. Tenint com a objectiu del projecte construir un entorn de consola que ens pugui permetre gestionar fitxers, directoris i informació del sistema de manera bàsica.
 
@@ -64,7 +64,7 @@ Nosaltres disposem d'una llicència de codi obert per a aquest projecte.
 
 #*Reiniciar el sistema*:
 
-
+-----------------------------------------------------------------------------------------------------------------------------
 `
 using System.Diagnostics;
 
@@ -77,7 +77,9 @@ void HastaLuego()
         UseShellExecute = false 
     });
 } `
+-----------------------------------------------------------------------------------------------------------------------------
+
 
 *Enllaç explicatiu de les comandes implementades:*
 
-https://github.com/Eduardo2828/NitroOS/blob/main/ideas/comandos.txt
+> https://github.com/Eduardo2828/NitroOS/blob/main/ideas/comandos.txt
