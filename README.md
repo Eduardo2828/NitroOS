@@ -7,7 +7,7 @@
 
 Noha, Javier i Marc.
 
-                        ![Logo del projecte](src/logo.png)
+  ![Logo del projecte](src/logo.png)
 
 
 
