@@ -64,19 +64,31 @@ Nosaltres disposem d'una llicència de codi obert per a aquest projecte.
 *Roadmap o millores futures*:
 
 ·Llistar contingut
+
 ·Canviar directori
+
 ·Crear directori
+
 ·Eliminar directori
+
 ·Mostrar contingut fitxer
+
 ·Informació del sistema
 
+
 ·Mostrar ajuda
+
 ·Versió del SO
+
 ·Memòria disponible
+
 ·Temps de funcionament
 
+
 ·Netejar pantalla
+
 ·Escriure text
+
 ·Apagar/reiniciar
 
 
