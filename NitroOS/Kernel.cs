@@ -87,10 +87,19 @@ namespace NitroOS
                 Console.WriteLine("seemem   - Mostra la memoria disponible i l'ús actual");
                 Console.WriteLine("tf       - Mostra el temps que el sistema ha estat funcionant des de l'ultim reinici");
 
+                Console.WriteLine("\n--- Calculadora ---");
+                Console.WriteLine("suma     - Fa una suma de dos nombres");
+                Console.WriteLine("resta    - Fa una resta de dos nombres");
+                Console.WriteLine("multi    - Fa una multiplicacio de dos nombres");
+                Console.WriteLine("div      - Fa una divisio de dos nombres");
+                Console.WriteLine("mod      - Fa el modul de dos nombres");
+                Console.WriteLine("arrel    - Fa l'arrel quadrada d'un nombre");
+
                 Console.WriteLine("\n--- Utils ---");
-                Console.WriteLine("lp          - Neteja la pantalla");
-                Console.WriteLine("scrib       - Permet escriure text en pantalla o en un fitxer");
-                Console.WriteLine("adeu/fora   - Apaga o reinicia el sistema segons l'opcio triada");
+                Console.WriteLine("lp       - Neteja la pantalla");
+                Console.WriteLine("scrib    - Permet escriure text en pantalla o en un fitxer");
+                Console.WriteLine("adeu     - Apaga el sistema");
+                Console.WriteLine("fora     - Reinicia el sistema");
 
                 Console.WriteLine("=============================================");
             }
@@ -108,6 +117,92 @@ namespace NitroOS
             {
                 Console.WriteLine("Reiniciant el sistema...");
                 Sys.Power.Reboot();
+            }
+
+            // COMANDA SUMA
+            void FerSuma()
+            {
+                double num1 = LlegirNumero("Introdueix el primer nombre: ");
+                double num2 = LlegirNumero("Introdueix el segon nombre: ");
+                Console.WriteLine("Resultat: " + (num1 + num2));
+            }
+
+            // COMANDA RESTA
+            void FerResta()
+            {
+                double num1 = LlegirNumero("Introdueix el primer nombre: ");
+                double num2 = LlegirNumero("Introdueix el segon nombre: ");
+                Console.WriteLine("Resultat: " + (num1 - num2));
+            }
+
+            // COMANDA MULTIPLICACIÓ
+            void FerMultiplicacio()
+            {
+                double num1 = LlegirNumero("Introdueix el primer nombre: ");
+                double num2 = LlegirNumero("Introdueix el segon nombre: ");
+                Console.WriteLine("Resultat: " + (num1 * num2));
+            }
+
+            // COMANDA DIVISIÓ
+            void FerDivisio()
+            {
+                double num1 = LlegirNumero("Introdueix el dividend: ");
+                double num2 = LlegirNumero("Introdueix el divisor: ");
+
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: no es pot dividir per zero");
+                    return;
+                }
+
+                Console.WriteLine("Resultat: " + (num1 / num2));
+            }
+
+            // COMANDA MÒDUL
+            void FerModul()
+            {
+                double num1 = LlegirNumero("Introdueix el primer nombre: ");
+                double num2 = LlegirNumero("Introdueix el segon nombre: ");
+
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: no es pot fer modul amb zero");
+                    return;
+                }
+
+                Console.WriteLine("Resultat: " + (num1 % num2));
+            }
+
+            // COMANDA ARREL QUADRADA
+            void FerArrelQuadrada()
+            {
+                double num = LlegirNumero("Introdueix el nombre: ");
+
+                if (num < 0)
+                {
+                    Console.WriteLine("Error: no es pot fer l'arrel quadrada d'un nombre negatiu");
+                    return;
+                }
+
+                Console.WriteLine("Resultat: " + Math.Sqrt(num));
+            }
+
+            double LlegirNumero(string missatge)
+            {
+                while (true)
+                {
+                    Console.Write(missatge);
+                    string entrada = Console.ReadLine();
+
+                    try
+                    {
+                        return double.Parse(entrada);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Error: introdueix un nombre valid");
+                    }
+                }
             }
         }
     }
