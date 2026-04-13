@@ -20,15 +20,19 @@ Noha, Javier i Marc.
 
 
 
+
 Aquí podem veure la pantalla d’inici de NitroOS executant-se dins d’una màquina virtual amb CosmOS.
 
 A la part superior es veu la seqüència d’arrencada del sistema (Boot Sequence). Es mostra informació dels desenvolupadors del projecte i apareix el logotip de NitroOS en format ASCII art.
 
 Finalment, es mostra un missatge de benvinguda i una breu instrucció perquè l’usuari entri a la shell. 
 
+
+
 *Tecnologies utilitzades*:
 
 Per a aquest servidor hem utilitzat llenguatge de programació en C#, com bé hem dit abans, el framework és de CosmOS, com a IDE tenim el Visual Studio Code 2022 i la plataforma que utilitcem és la .NET.
+
 
 
 *Instal·lació i ús*:
@@ -36,9 +40,11 @@ Per a aquest servidor hem utilitzat llenguatge de programació en C#, com bé he
 [Més endavant]
 
 
+
 *Estructura del projecte*:
 
 [Captures + explicacions]
+
 
 
 *Autors i contribucions*:
@@ -48,9 +54,11 @@ Per a aquest servidor hem utilitzat llenguatge de programació en C#, com bé he
 👨 Marc -> Programació
 
 
+
 *Llicència*:
 
 Nosaltres disposem d'una llicència de codi obert per a aquest projecte.
+
 
 
 *Roadmap o millores futures*:
@@ -71,7 +79,10 @@ Nosaltres disposem d'una llicència de codi obert per a aquest projecte.
 ·Escriure text
 ·Apagar/reiniciar
 
+
+
 *Exemples d'una de les funcions creades*
+
 
 #*Reiniciar el sistema*:
 
@@ -88,6 +99,7 @@ void HastaLuego()
     });
 }
 -----------------------------------------------------------------------------------------------------------------------------
+
 
 
 *Enllaç explicatiu de les comandes implementades:*
