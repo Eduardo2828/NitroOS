@@ -25,14 +25,14 @@ namespace NitroOS
             // Logo ASCII (centrado aprox., ajusta líneas)
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(@"
-    _____         _     _     
-   / ____|       | |   | |    
-  | |  __  __ _  | | __| | __ 
-  | | |_ |/ _` | | |/ _` |/ _`|
-  | |__| | (_| | | | (_| | (_|
-   \_____|\__,_| |_|\__,_|\__,|
+    _   _ _ _             
+   | \ | (_) |            
+   |  \| |_| |_ _ __ ___  
+   | . ` | | __| '__/ _ \ 
+   | |\  | | |_| | | (_) |
+   |_| \_|_|\__|_|  \___/ 
 ");
-            Console.WriteLine("Benvingut al Sistema Operatiu Basic");
+            Console.WriteLine("Benvingut a NitroOS");
             Console.ResetColor();
 
             // Pausa para ver boot (luego inicia shell)
@@ -56,11 +56,11 @@ namespace NitroOS
                         break;
 
                     case "adeu":
-                        ExitOS();
+                        ShutdownOS();
                         break;
 
                     case "fora":
-                        ExitOS();
+                        RebootOS();
                         break;
 
                     default:
@@ -95,12 +95,19 @@ namespace NitroOS
                 Console.WriteLine("=============================================");
             }
 
-            // COMANDA ADEU / FORA
-            void ExitOS()
+            // COMANDA ADEU
+            void ShutdownOS()
             {
-                Console.WriteLine("Apagant el sistema... Adeu!");
-                // Sortir del Run() de Cosmos, que és l’única manera de "aturar"
-                while (true) { } // bloqueja la shell per simular apagament
+                Console.WriteLine("Apagant el sistema...");
+                Sys.Power.Shutdown();
+
+            }
+
+            // COMANDA FORA
+            void RebootOS()
+            {
+                Console.WriteLine("Reiniciant el sistema...");
+                Sys.Power.Reboot();
             }
         }
     }
