@@ -167,6 +167,22 @@ Llegir tot el text d’un fitxer concret: Console.WriteLine(File.ReadAllText(@"0
 Llegir totes les bytes d’un fitxer: Console.WriteLine(File.ReadAllBytes(@"0:\\testing.txt"));.
 -----------------------------------------------------------------------------------------------------------------------------
 Audio
+Per a afegir audios de boot, command and command fail:
+Necessitem 3 .wav
+byte[] bootBytes = GetResourceBytes("boot.wav");
+byte[] okBytes = GetResourceBytes("ok.wav");
+byte[] errorBytes = GetResourceBytes("error.wav");
+
+NECESSARI
+using Cosmos.System.Audio;
+using Cosmos.System.Audio.IO;
+
+AudioMixer mixer;
+AudioManager audioManager;
+MemoryAudioStream bootStream, okStream, errorStream;
+
+*pegar codigo*
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------
