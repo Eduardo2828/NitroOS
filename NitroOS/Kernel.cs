@@ -35,6 +35,9 @@ namespace NitroOS
             // Guardar l'hora d'inici del sistema
             bootSeconds = (RTC.Hour * 3600) + (RTC.Minute * 60) + RTC.Second;
 
+            // Crida funció per l'audio
+            InicialitzarAudio();
+
             Console.WriteLine("Cosmos booted successfully.");
         }
 
@@ -43,9 +46,11 @@ namespace NitroOS
             Console.Clear();  // Limpia pantalla VGA text mode [web:47]
 
             // Versión del SO
-            Console.WriteLine("cosmoOS v1.0 - Boot Sequence");
+            Console.WriteLine("cosmoOS v1.5 - Boot Sequence");
             Console.WriteLine("Desenvolupament per Eduardo, Noha i Marc - Granollers, 2026");
-            Console.Beep(1000, 200);  // Sonido boot [web:40]
+
+            // AUDIO D'INICI
+            SoInici();
 
             // Logo ASCII (centrado aprox., ajusta líneas)
             Console.ForegroundColor = ConsoleColor.Cyan;
