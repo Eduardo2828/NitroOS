@@ -73,119 +73,143 @@ namespace NitroOS
                 if (string.IsNullOrWhiteSpace(input))
                     continue;
 
-                string[] parts = input.Split(' ');
-                string cmd = parts[0].ToLower();
+                ExecutarComanda(input, true);
+            }
+        }
 
-                switch (cmd)
-                {
-                    case "sos":
-                        ShowSOS();
-                        break;
 
-                    case "lp":
-                        Console.Clear();
-                        break;
+        void ExecutarComanda(string input, bool guardarHistorial)
+        {
+            string[] parts = input.Split(' ');
+            string cmd = parts[0].ToLower();
 
-                    case "adeu":
-                        ShutdownOS();
-                        break;
+            if (guardarHistorial)
+            {
+                AfegirHistorial(input);
+            }
 
-                    case "fora":
-                        RebootOS();
-                        break;
+            switch (cmd)
+            {
+                case "sos":
+                    ShowSOS();
+                    break;
 
-                    case "lc":
-                        LlistarContingut();
-                        break;
+                case "lp":
+                    Console.Clear();
+                    break;
 
-                    case "hcdir":
-                        if (parts.Length < 2)
+                case "hist":
+                    MostrarHistorial();
+                    break;
+
+                case "repetir":
+                    if (parts.Length < 2)
+                    {
+                        Console.WriteLine("Us: repetir numero");
+                    }
+                    else
+                    {
+                        try
                         {
-                            Console.WriteLine("Us: hcdir nomDirectori");
+                            int numero = int.Parse(parts[1]);
+                            string comandaRecuperada = RecuperarComandaHistorial(numero);
+
+                            if (!string.IsNullOrWhiteSpace(comandaRecuperada))
+                            {
+                                Console.WriteLine("Executant: " + comandaRecuperada);
+                                ExecutarComanda(comandaRecuperada, true);
+                            }
                         }
-                        else
+                        catch
                         {
-                            CrearDirectori(parts[1]);
+                            Console.WriteLine("Error: has d'indicar un numero valid.");
                         }
-                        break;
+                    }
+                    break;
 
-                    case "eldir":
-                        if (parts.Length < 2)
-                        {
-                            Console.WriteLine("Us: eldir nomDirectori");
-                        }
-                        else
-                        {
-                            EliminarDirectori(parts[1]);
-                        }
-                        break;
+                case "adeu":
+                    ShutdownOS();
+                    break;
 
-                    case "mc":
-                        if (parts.Length < 2)
-                        {
-                            Console.WriteLine("Us: mc nomFitxer");
-                        }
-                        else
-                        {
-                            MostrarContingutFitxer(parts[1]);
-                        }
-                        break;
+                case "fora":
+                    RebootOS();
+                    break;
 
-                    case "cdir":
-                        if (parts.Length < 2)
-                        {
-                            Console.WriteLine("Us: cdir nomDirectori");
-                        }
-                        else
-                        {
-                            CanviarDirectori(parts[1]);
-                        }
-                        break;
+                case "lc":
+                    LlistarContingut();
+                    break;
 
-                    case "edicio":
-                        MostrarEdicio();
-                        break;
+                case "hcdir":
+                    if (parts.Length < 2)
+                        Console.WriteLine("Us: hcdir nomDirectori");
+                    else
+                        CrearDirectori(parts[1]);
+                    break;
 
-                    case "seemem":
-                        MostrarMemoria();
-                        break;
+                case "eldir":
+                    if (parts.Length < 2)
+                        Console.WriteLine("Us: eldir nomDirectori");
+                    else
+                        EliminarDirectori(parts[1]);
+                    break;
 
-                    case "tf":
-                        MostrarTempsFuncionant();
-                        break;
+                case "mc":
+                    if (parts.Length < 2)
+                        Console.WriteLine("Us: mc nomFitxer");
+                    else
+                        MostrarContingutFitxer(parts[1]);
+                    break;
 
-                    case "scrib":
-                        EscriureText();
-                        break;
+                case "cdir":
+                    if (parts.Length < 2)
+                        Console.WriteLine("Us: cdir nomDirectori");
+                    else
+                        CanviarDirectori(parts[1]);
+                    break;
 
-                    case "suma":
-                        FerSuma();
-                        break;
+                case "edicio":
+                    MostrarEdicio();
+                    break;
 
-                    case "resta":
-                        FerResta();
-                        break;
+                case "seemem":
+                    MostrarMemoria();
+                    break;
 
-                    case "multi":
-                        FerMultiplicacio();
-                        break;
+                case "tf":
+                    MostrarTempsFuncionant();
+                    break;
 
-                    case "div":
-                        FerDivisio();
-                        break;
+                case "scrib":
+                    EscriureText();
+                    break;
 
-                    case "mod":
-                        FerModul();
-                        break;
+                case "suma":
+                    FerSuma();
+                    break;
 
-                    case "arrel":
-                        FerArrelQuadrada();
-                        break;
+                case "resta":
+                    FerResta();
+                    break;
 
-                    default:
-                        Console.WriteLine("Comanda no reconeguda. Escriu 'sos'");
-                        break;
-                }
+                case "multi":
+                    FerMultiplicacio();
+                    break;
+
+                case "div":
+                    FerDivisio();
+                    break;
+
+                case "mod":
+                    FerModul();
+                    break;
+
+                case "arrel":
+                    FerArrelQuadrada();
+                    break;
+
+                default:
+                    Console.WriteLine("Comanda no reconeguda. Escriu 'sos'");
+                    break;
             }
         }
     }

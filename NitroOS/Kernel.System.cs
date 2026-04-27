@@ -62,6 +62,8 @@ namespace NitroOS
             Console.WriteLine("===== INFORMACIO DEL SISTEMA I COMANDES =====");
 
             Console.WriteLine("\n--- Utils ---");
+            Console.WriteLine("hist     - Mostra les ultimes 5 comandes executades");
+            Console.WriteLine("repetir  - Torna a executar una comanda de l'historial");
             Console.WriteLine("lp       - Neteja la pantalla");
             Console.WriteLine("scrib    - Escriu text a pantalla o fitxer");
             Console.WriteLine("adeu     - Apaga el sistema");
