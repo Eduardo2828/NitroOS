@@ -35,7 +35,7 @@ namespace NitroOS
             // Guardar l'hora d'inici del sistema
             bootSeconds = (RTC.Hour * 3600) + (RTC.Minute * 60) + RTC.Second;
 
-            // Crida funció per l'audio
+            // Inicialitzem l'audio despres de registrar el sistema de fitxers
             InicialitzarAudio();
 
             Console.WriteLine("Cosmos booted successfully.");

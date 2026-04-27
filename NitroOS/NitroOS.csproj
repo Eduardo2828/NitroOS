@@ -21,6 +21,24 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Resources\sons\correcte.wav" />
+      <None Remove="Resources\sons\error.wav" />
+      <None Remove="Resources\sons\inici.wav" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Resources\sons\correcte.wav">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Resources\sons\error.wav">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Resources\sons\inici.wav">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />

@@ -5,7 +5,6 @@ using Cosmos.System.Audio.DSP;
 using Cosmos.System.Audio.IO;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace NitroOS
 {
@@ -27,7 +26,6 @@ namespace NitroOS
             {
                 mixer = new AudioMixer();
 
-                // Driver d'audio AC97
                 var driver = AC97.Initialize(4096);
 
                 audioManager = new AudioManager()
@@ -39,11 +37,12 @@ namespace NitroOS
                 audioManager.Enable();
 
                 audioDisponible = true;
+                Console.WriteLine("Audio inicialitzat correctament");
             }
-            catch (Exception e)
+            catch
             {
                 audioDisponible = false;
-                Console.WriteLine("Audio no disponible: " + e.Message);
+                Console.WriteLine("Audio no disponible en aquesta maquina");
             }
         }
 
@@ -75,7 +74,7 @@ namespace NitroOS
                 Console.WriteLine("Error reproduint audio: " + e.Message);
             }
         }
-
+        
         // So d'inici del sistema
         void SoInici()
         {
