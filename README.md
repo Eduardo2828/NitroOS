@@ -183,7 +183,11 @@ MemoryAudioStream bootStream, okStream, errorStream;
 
 *pegar codigo*
 
-
+-----------------------------------------------------------------------------------------------------------------------------
+Hist: Funció que mostra les 5 últimes comandes fetes (s'emmagatzemen en una llista)
+(codi)
+Repetir + [num]: A partir de la llista anterior, ennumerada, es pot fer Repetir + un número per a repetir una commanda
+(codi)
 
 -----------------------------------------------------------------------------------------------------------------------------
 *Enllaç explicatiu de les comandes implementades:*
