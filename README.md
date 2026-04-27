@@ -142,9 +142,34 @@ void HastaLuego()
     
 }
 -----------------------------------------------------------------------------------------------------------------------------
+Sistema de fitxers
+
+Necessitarem un sistema de fitxers per a administrar fitxers, per fer aìxo declararem un objecte global del VFS: Sys.FileSystem.CosmosVFS fs = new Cosmos.System.FileSystem.CosmosVFS();
+Ho registrarem al VFSManager dins de BeforeRun(): Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+Afegirem la referència a System.IO per poder usar File i Directory.
+
+Formatarem el disc, primer el buscarem amb VFSManager.GetDisks() i després formatarem el disc amb Disk.FormatDisk(int index, string format, bool quick = true) en FAT32
+
+Comandes bàsiques:
+Obtenir tots els fitxers d’un camí: var files_list = Directory.GetFiles(@"0:\\");.
+Mostrar els noms amb un foreach (var file in files_list) { Console.WriteLine(file); }.
+Obtenir també directoris amb: var directory_list = Directory.GetDirectories(@"0:\\"); i recórrer-los amb un altre foreach.
+
+Llegir tots els fitxers d’un directori: primer var directory_list = Directory.GetFiles(@"0:\\");.
+Per a cada fitxer, llegir i mostrar contingut dins d’un try-catch: var content = File.ReadAllText(file); i després escriure nom, mida i contingut.
+
+Crear un fitxer nou: File.Create(@"0:\\testing.txt"); dins d’un try { ... } catch (Exception e) { ... }.
+Crear un directori nou: Directory.Create(@"0:\\testdirectory\\"); també amb try-catch.
+Esborrar fitxer i directori: File.Delete(@"0:\\testing.txt"); i Directory.Delete(@"0:\\testdirectory\\");.
+
+Escriure text a un fitxer existent: File.WriteAllText(@"0:\\testing.txt", "Learning how to use VFS!"); dins d’un try-catch.
+Llegir tot el text d’un fitxer concret: Console.WriteLine(File.ReadAllText(@"0:\\testing.txt")); amb try-catch.
+Llegir totes les bytes d’un fitxer: Console.WriteLine(File.ReadAllBytes(@"0:\\testing.txt"));.
+-----------------------------------------------------------------------------------------------------------------------------
+Audio
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------
 *Enllaç explicatiu de les comandes implementades:*
 
 > https://github.com/Eduardo2828/NitroOS/blob/main/ideas/comandos.txt
