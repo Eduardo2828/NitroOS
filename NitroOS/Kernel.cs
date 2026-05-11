@@ -22,7 +22,7 @@ namespace NitroOS
         int bootSeconds;
 
         // Versio del sistema operatiu
-        string osVersion = "NitroOS v1.0";
+        string osVersion = "NitroOS v1.7";
 
         protected override void BeforeRun()
         {
@@ -46,7 +46,7 @@ namespace NitroOS
             Console.Clear();  // Limpia pantalla VGA text mode [web:47]
 
             // Versión del SO
-            Console.WriteLine("cosmoOS v1.6 - Boot Sequence");
+            Console.WriteLine(osVersion + " - Boot Sequence");
             Console.WriteLine("Desenvolupament per Eduardo, Noha i Marc - Granollers, 2026");
 
             // AUDIO D'INICI
