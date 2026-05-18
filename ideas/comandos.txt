@@ -17,7 +17,7 @@ edicio	         Mostra la versió del sistema operatiu
 seemem	         Mostra la memòria disponible i l’ús actual
 tf	             Mostra el temps que el sistema ha estat funcionant des de l’últim reinici
 
-Calculadora
+🖩 Calculadora
 💻 Comanda	                  📌 Funció
 suma             Fa una suma de dos nombres");
 resta            Fa una resta de dos nombres");
