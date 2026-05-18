@@ -17,7 +17,7 @@ namespace NitroOS
         {
             int num1 = LlegirNumero("Introdueix el primer nombre: ");
             int num2 = LlegirNumero("Introdueix el segon nombre: ");
-            Console.WriteLine("Resultat: " + (num1 + num2));
+            EscriureSortida("Resultat: " + (num1 + num2));
         }
 
         // COMANDA RESTA
@@ -25,7 +25,7 @@ namespace NitroOS
         {
             int num1 = LlegirNumero("Introdueix el primer nombre: ");
             int num2 = LlegirNumero("Introdueix el segon nombre: ");
-            Console.WriteLine("Resultat: " + (num1 - num2));
+            EscriureSortida("Resultat: " + (num1 - num2));
         }
 
         // COMANDA MULTIPLICACIÓ
@@ -33,7 +33,7 @@ namespace NitroOS
         {
             int num1 = LlegirNumero("Introdueix el primer nombre: ");
             int num2 = LlegirNumero("Introdueix el segon nombre: ");
-            Console.WriteLine("Resultat: " + (num1 * num2));
+            EscriureSortida("Resultat: " + (num1 * num2));
         }
 
         // COMANDA DIVISIÓ
@@ -44,11 +44,11 @@ namespace NitroOS
 
             if (num2 == 0)
             {
-                Console.WriteLine("Error: no es pot dividir per zero");
+                EscriureSortida("Error: no es pot dividir per zero");
                 return;
             }
 
-            Console.WriteLine("Resultat: " + (num1 / num2));
+            EscriureSortida("Resultat: " + (num1 / num2));
         }
 
         // COMANDA MÒDUL
@@ -59,11 +59,11 @@ namespace NitroOS
 
             if (num2 == 0)
             {
-                Console.WriteLine("Error: no es pot fer modul amb zero");
+                EscriureSortida("Error: no es pot fer modul amb zero");
                 return;
             }
 
-            Console.WriteLine("Resultat: " + (num1 % num2));
+            EscriureSortida("Resultat: " + (num1 % num2));
         }
 
         // COMANDA ARREL QUADRADA
@@ -73,11 +73,11 @@ namespace NitroOS
 
             if (num < 0)
             {
-                Console.WriteLine("Error: no es pot fer l'arrel quadrada d'un nombre negatiu");
+                EscriureSortida("Error: no es pot fer l'arrel quadrada d'un nombre negatiu");
                 return;
             }
 
-            Console.WriteLine("Resultat: " + Math.Sqrt(num));
+            EscriureSortida("Resultat: " + Math.Sqrt(num));
         }
 
     }
