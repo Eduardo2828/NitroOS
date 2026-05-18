@@ -17,7 +17,14 @@
         <Profile>VMware</Profile>
         <Description>Use VMware Player or Workstation to deploy and debug.</Description>
         <PxeInterface>192.168.0.8</PxeInterface>
+        <DebugEnabled>False</DebugEnabled>
     </PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\sons\inici.wav" />
+		<EmbeddedResource Include="Resources\sons\correcte.wav" />
+		<EmbeddedResource Include="Resources\sons\error.wav" />
+	</ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
