@@ -22,7 +22,7 @@ namespace NitroOS
         int bootSeconds;
 
         // Versio del sistema operatiu
-        string osVersion = "NitroOS v1.0";
+        string osVersion = "NitroOS v1.7";
 
 
         protected override void BeforeRun()
