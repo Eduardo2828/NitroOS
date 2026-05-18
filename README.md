@@ -91,20 +91,7 @@ Nosaltres disposem d'una llicència de codi obert per a aquest projecte.
 
 ·Apagar/reiniciar
 
-·sistema de comandes que permet a l’usuari introduir operacions matemàtiques bàsiques:
-
-    Suma (+)
-    
-    Resta (-)
-    
-    Multiplicació (*)
-    
-    Divisió (/)
-    
-    Mòdul (%)
-    
-    Arrel quadrada (sqrt)
-    
+·sistema de comandes que permet a l’usuari introduir operacions matemàtiques bàsiques:    
     
 S'han implementat implementat les funcions per controlar l’estat del sistema:
 
@@ -162,9 +149,7 @@ Crear un fitxer nou: File.Create(@"0:\\testing.txt"); dins d’un try { ... } ca
 Crear un directori nou: Directory.Create(@"0:\\testdirectory\\"); també amb try-catch.
 Esborrar fitxer i directori: File.Delete(@"0:\\testing.txt"); i Directory.Delete(@"0:\\testdirectory\\");.
 
-Escriure text a un fitxer existent: File.WriteAllText(@"0:\\testing.txt", "Learning how to use VFS!"); dins d’un try-catch.
-Llegir tot el text d’un fitxer concret: Console.WriteLine(File.ReadAllText(@"0:\\testing.txt")); amb try-catch.
-Llegir totes les bytes d’un fitxer: Console.WriteLine(File.ReadAllBytes(@"0:\\testing.txt"));.
+
 -----------------------------------------------------------------------------------------------------------------------------
 Audio
 Per a afegir audios de boot, command and command fail:
