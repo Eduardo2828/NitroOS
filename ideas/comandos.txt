@@ -17,19 +17,9 @@ edicio	         Mostra la versió del sistema operatiu
 seemem	         Mostra la memòria disponible i l’ús actual
 tf	             Mostra el temps que el sistema ha estat funcionant des de l’últim reinici
 
-🖥 Calculadora
-💻 Comanda	                  📌 Funció
-suma             Fa una suma de dos nombres");
-resta            Fa una resta de dos nombres");
-multi            Fa una multiplicacio de dos nombres");
-div              Fa una divisio de dos nombres");
-mod              Fa el modul de dos nombres");
-arrel            Fa l'arrel quadrada"
 
 🛠️ Útils
 💻 Comanda	                  📌 Funció
-hist             Mostra les ultimes 5 comandes executades
-repetir          Torna a executar una comanda de l'historial
-lp	             Neteja la pantalla de tot el que s’hi mostra
-scrib	           Permet escriure text en pantalla o en un fitxer
-adeu/fora	       Apaga o reinicia el sistema segons l’opció que triïs
+lp	            Neteja la pantalla de tot el que s’hi mostra
+scrib	          Permet escriure text en pantalla o en un fitxer
+adeu/fora	      Apaga o reinicia el sistema segons l’opció que triïs

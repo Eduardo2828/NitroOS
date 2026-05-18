@@ -39,23 +39,49 @@ namespace NitroOS
             // Preparem i inicialitzem l'audio despres de registrar el sistema de fitxers
             InicialitzarAudio();
 
-            // Inicialitzem gràfics
-            InicialitzarGrafics();
-
             Console.WriteLine("Cosmos booted successfully.");
         }
 
         protected override void Run()
         {
+            Console.Clear();  // Limpia pantalla VGA text mode [web:47]
+
+            // Versión del ISO
+            Console.WriteLine(osVersion + " - Boot Sequence");
+            Console.WriteLine("Desenvolupament per Eduardo, Noha i Marc - Granollers, 2026");
+
+            // AUDIO D'INICI
             SoInici();
 
-            MostrarBenvingudaGrafica();
+            // Logo ASCII (centrado aprox., ajusta líneas)
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(@"
+    _   _ _ _             
+   | \ | (_) |            
+   |  \| |_| |_ _ __ ___  
+   | . ` | | __| '__/ _ \ 
+   | |\  | | |_| | | (_) |
+   |_| \_|_|\__|_|  \___/ 
+");
+            Console.WriteLine("Benvingut a NitroOS");
+            Console.ResetColor();
 
-            EsperarEnterGrafic();
-
+            // Pausa para ver boot (luego inicia shell)
+            Console.WriteLine("\nPresiona Enter per a la shell...");
+            Console.ReadLine();
             AturarAudio();
 
-            ShellGrafica();
+            // SHELL
+            while (true)
+            {
+                Console.Write($"NitroOS {currentPath}> ");
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input))
+                    continue;
+
+                ExecutarComanda(input, true);
+            }
         }
 
 
@@ -78,7 +104,7 @@ namespace NitroOS
 
                 case "lp":
                     SoComandaCorrecta();
-                    NetejarSortidaGrafica();
+                    Console.Clear();
                     break;
 
                 case "hist":

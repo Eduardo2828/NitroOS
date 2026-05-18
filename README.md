@@ -68,6 +68,19 @@ Aquest projecte ha estat desenvolupat utilitzant les següents tecnologies:
 
 ---
 
+# 📦 Instal·lació i ús
+
+```bash
+[Més endavant]
+```
+
+---
+
+# 🧱 Estructura del projecte
+
+📌 *Properament s’afegiran captures i explicacions detallades de l’estructura interna del sistema.*
+
+---
 
 # 🚧 Roadmap i millores futures
 

@@ -8,49 +8,56 @@ namespace NitroOS
 {
     public partial class Kernel
     {
+        // Llista que guarda les ultimes 5 comandes executades
         List<string> commandHistory = new List<string>();
 
+        // Afegeix una comanda a l'historial
         void AfegirHistorial(string comanda)
         {
             if (string.IsNullOrWhiteSpace(comanda))
                 return;
 
+            // No guardem la comanda hist per evitar omplir l'historial només consultant-lo
             if (comanda.ToLower() == "hist")
                 return;
 
             commandHistory.Add(comanda);
 
+            // Si hi ha mes de 5 comandes, eliminem la mes antiga
             if (commandHistory.Count > 5)
             {
                 commandHistory.RemoveAt(0);
             }
         }
 
+        // Mostra les ultimes 5 comandes executades
         void MostrarHistorial()
         {
             if (commandHistory.Count == 0)
             {
-                EscriureSortida("No hi ha comandes a l'historial.");
+                Console.WriteLine("No hi ha comandes a l'historial.");
                 return;
             }
 
-            EscriureSortida("Ultimes comandes executades:");
+            Console.WriteLine("Ultimes comandes executades:");
 
             for (int i = 0; i < commandHistory.Count; i++)
             {
-                EscriureSortida((i + 1) + " - " + commandHistory[i]);
+                Console.WriteLine((i + 1) + " - " + commandHistory[i]);
             }
 
-            EscriureSortida("Per repetir una comanda escriu: repetir numero");
+            Console.WriteLine("Per repetir una comanda escriu: repetir numero");
+            Console.WriteLine("Exemple: repetir 2");
         }
 
+        // Recupera una comanda de l'historial segons el numero indicat
         string RecuperarComandaHistorial(int numero)
         {
             int index = numero - 1;
 
             if (index < 0 || index >= commandHistory.Count)
             {
-                EscriureSortida("Numero d'historial no valid.");
+                Console.WriteLine("Numero d'historial no valid.");
                 return "";
             }
 

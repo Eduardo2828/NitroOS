@@ -23,21 +23,21 @@ namespace NitroOS
                 var directoris = Directory.GetDirectories(currentPath);
                 var fitxers = Directory.GetFiles(currentPath);
 
-                EscriureSortida("Directoris:");
+                Console.WriteLine("Directoris:");
                 foreach (var directori in directoris)
                 {
-                    EscriureSortida(" [DIR]  " + NomFinalRuta(directori));
+                    Console.WriteLine(" [DIR]  " + NomFinalRuta(directori));
                 }
 
-                EscriureSortida("Fitxers:");
+                Console.WriteLine("Fitxers:");
                 foreach (var fitxer in fitxers)
                 {
-                    EscriureSortida(" [FILE] " + NomFinalRuta(fitxer));
+                    Console.WriteLine(" [FILE] " + NomFinalRuta(fitxer));
                 }
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a lc: " + e.Message);
+                Console.WriteLine("Error a lc: " + e.Message);
             }
         }
 
@@ -62,11 +62,11 @@ namespace NitroOS
             {
                 string novaRuta = currentPath + nomDirectori + @"\";
                 Directory.CreateDirectory(novaRuta);
-                EscriureSortida("Directori creat: " + nomDirectori);
+                Console.WriteLine("Directori creat: " + nomDirectori);
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a hcdir: " + e.Message);
+                Console.WriteLine("Error a hcdir: " + e.Message);
             }
         }
 
@@ -77,11 +77,11 @@ namespace NitroOS
             {
                 string ruta = currentPath + nomDirectori + @"\";
                 Directory.Delete(ruta);
-                EscriureSortida("Directori eliminat: " + nomDirectori);
+                Console.WriteLine("Directori eliminat: " + nomDirectori);
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a eldir: " + e.Message);
+                Console.WriteLine("Error a eldir: " + e.Message);
             }
         }
 
@@ -92,12 +92,12 @@ namespace NitroOS
             {
                 string ruta = currentPath + nomFitxer;
                 string contingut = File.ReadAllText(ruta);
-                EscriureSortida("Contingut de " + nomFitxer + ":");
-                EscriureSortida(contingut);
+                Console.WriteLine("Contingut de " + nomFitxer + ":");
+                Console.WriteLine(contingut);
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a mc: " + e.Message);
+                Console.WriteLine("Error a mc: " + e.Message);
             }
         }
 
@@ -137,12 +137,12 @@ namespace NitroOS
                 }
                 else
                 {
-                    EscriureSortida("El directori no existeix");
+                    Console.WriteLine("El directori no existeix");
                 }
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a cdir: " + e.Message);
+                Console.WriteLine("Error a cdir: " + e.Message);
             }
         }
     }

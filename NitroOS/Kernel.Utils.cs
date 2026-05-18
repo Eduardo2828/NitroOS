@@ -15,7 +15,7 @@ namespace NitroOS
         // COMANDA ADEU
         void ShutdownOS()
         {
-            EscriureSortida("Apagant el sistema...");
+            Console.WriteLine("Apagant el sistema...");
             Sys.Power.Shutdown();
 
         }
@@ -23,7 +23,7 @@ namespace NitroOS
         // COMANDA FORA
         void RebootOS()
         {
-            EscriureSortida("Reiniciant el sistema...");
+            Console.WriteLine("Reiniciant el sistema...");
             Sys.Power.Reboot();
         }
 
@@ -39,8 +39,8 @@ namespace NitroOS
                 {
                     Console.Write("Introdueix el text: ");
                     string text = Console.ReadLine();
-                    EscriureSortida("Text:");
-                    EscriureSortida(text);
+                    Console.WriteLine("Text:");
+                    Console.WriteLine(text);
                 }
                 else if (desti == "fitxer")
                 {
@@ -62,23 +62,23 @@ namespace NitroOS
                         File.WriteAllText(ruta, text);
                     }
 
-                    EscriureSortida("Text guardat a: " + nomFitxer);
+                    Console.WriteLine("Text guardat a: " + nomFitxer);
                 }
                 else
                 {
-                    EscriureSortida("Opcio no valida. Escriu 'pantalla' o 'fitxer'");
+                    Console.WriteLine("Opcio no valida. Escriu 'pantalla' o 'fitxer'");
                 }
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a scrib: " + e.Message);
+                Console.WriteLine("Error a scrib: " + e.Message);
             }
         }
 
         // FUNCIO ESPERAR PAGINA
         void EsperarPagina()
         {
-            EscriureSortida("\n--- Prem Enter per continuar ---");
+            Console.WriteLine("\n--- Prem Enter per continuar ---");
             Console.ReadLine();
         }
 
@@ -96,7 +96,7 @@ namespace NitroOS
                 }
                 catch
                 {
-                    EscriureSortida("Error: introdueix un nombre valid");
+                    Console.WriteLine("Error: introdueix un nombre valid");
                 }
             }
         }

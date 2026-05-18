@@ -1,6 +1,13 @@
-﻿using Cosmos.Core;
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+using Sys = Cosmos.System;
+using Cosmos.System.FileSystem;
+using Cosmos.System.FileSystem.VFS;
+using Cosmos.Core;
 using Cosmos.HAL;
-using System;
+
 namespace NitroOS
 {
     public partial class Kernel
@@ -8,40 +15,67 @@ namespace NitroOS
         // COMANDA SOS
         void ShowSOS()
         {
-            EscriureSortida("===== INFORMACIO DEL SISTEMA I COMANDES =====\n");
+            // ---------- PAGINA 1 ----------
+            Console.Clear();
+            Console.WriteLine("===== INFORMACIO DEL SISTEMA I COMANDES =====");
 
-            EscriureSortida("--- Gestio de fitxers i directoris ---");
-            EscriureSortida("lc       - Mostra tots els fitxers i carpetes dins del directori actual");
-            EscriureSortida("cdir     - Canvia el directori actual a un altre especificat");
-            EscriureSortida("hcdir    - Crea un nou directori amb el nom indicat");
-            EscriureSortida("eldir    - Elimina un directori especificat");
-            EscriureSortida("mc       - Mostra el contingut d'un fitxer sense obrir editor\n");
+            Console.WriteLine("\n--- Gestio de fitxers i directoris ---");
+            Console.WriteLine("lc       - Mostra tots els fitxers i carpetes dins del directori actual");
+            Console.WriteLine("cdir     - Canvia el directori actual a un altre especificat");
+            Console.WriteLine("hcdir    - Crea un nou directori amb el nom indicat");
+            Console.WriteLine("eldir    - Elimina un directori especificat");
+            Console.WriteLine("mc       - Mostra el contingut d'un fitxer sense obrir editor");
 
-            EscriureSortida("--- Informacio del sistema ---");
-            EscriureSortida("sos      - Mostra aquesta ajuda");
-            EscriureSortida("edicio   - Mostra la versio del sistema operatiu");
-            EscriureSortida("seemem   - Mostra la memoria disponible");
-            EscriureSortida("tf       - Mostra el temps funcionant\n");
+            EsperarPagina();
 
-            EscriureSortida("--- Calculadora ---");
-            EscriureSortida("suma     - Fa una suma de dos nombres");
-            EscriureSortida("resta    - Fa una resta de dos nombres");
-            EscriureSortida("multi    - Fa una multiplicacio de dos nombres");
-            EscriureSortida("div      - Fa una divisio de dos nombres");
-            EscriureSortida("mod      - Fa el modul de dos nombres");
-            EscriureSortida("arrel    - Fa l'arrel quadrada\n");
 
-            EscriureSortida("--- Utils ---");
-            EscriureSortida("lp       - Neteja la pantalla");
-            EscriureSortida("scrib    - Escriu text a pantalla o fitxer");
-            EscriureSortida("adeu     - Apaga el sistema");
-            EscriureSortida("fora     - Reinicia el sistema");
+            // ---------- PAGINA 2 ----------
+            Console.Clear();
+            Console.WriteLine("===== INFORMACIO DEL SISTEMA I COMANDES =====");
+
+            Console.WriteLine("\n--- Informacio del sistema ---");
+            Console.WriteLine("sos      - Mostra aquesta ajuda");
+            Console.WriteLine("edicio   - Mostra la versio del sistema operatiu");
+            Console.WriteLine("seemem   - Mostra la memoria disponible");
+            Console.WriteLine("tf       - Mostra el temps funcionant");
+
+            EsperarPagina();
+
+
+            // ---------- PAGINA 3 ----------
+            Console.Clear();
+            Console.WriteLine("===== INFORMACIO DEL SISTEMA I COMANDES =====");
+
+            Console.WriteLine("\n--- Calculadora ---");
+            Console.WriteLine("suma     - Fa una suma de dos nombres");
+            Console.WriteLine("resta    - Fa una resta de dos nombres");
+            Console.WriteLine("multi    - Fa una multiplicacio de dos nombres");
+            Console.WriteLine("div      - Fa una divisio de dos nombres");
+            Console.WriteLine("mod      - Fa el modul de dos nombres");
+            Console.WriteLine("arrel    - Fa l'arrel quadrada");
+
+            EsperarPagina();
+
+
+            // ---------- PAGINA 4 ----------
+            Console.Clear();
+            Console.WriteLine("===== INFORMACIO DEL SISTEMA I COMANDES =====");
+
+            Console.WriteLine("\n--- Utils ---");
+            Console.WriteLine("hist     - Mostra les ultimes 5 comandes executades");
+            Console.WriteLine("repetir  - Torna a executar una comanda de l'historial");
+            Console.WriteLine("lp       - Neteja la pantalla");
+            Console.WriteLine("scrib    - Escriu text a pantalla o fitxer");
+            Console.WriteLine("adeu     - Apaga el sistema");
+            Console.WriteLine("fora     - Reinicia el sistema");
+
+            Console.WriteLine("\n--- Fi de l'ajuda ---");
         }
 
         // COMANDA EDICIO
         void MostrarEdicio()
         {
-            EscriureSortida("Versio del sistema: " + osVersion);
+            Console.WriteLine("Versio del sistema: " + osVersion);
         }
 
         // COMANDA SEEMEM
@@ -50,13 +84,13 @@ namespace NitroOS
             try
             {
                 uint totalRamMB = CPU.GetAmountOfRAM();
-                EscriureSortida("Memoria total detectada: " + totalRamMB + " MB");
-                EscriureSortida("Memoria usada: no disponible en aquesta versio");
-                EscriureSortida("Memoria lliure: no disponible en aquesta versio");
+                Console.WriteLine("Memoria total detectada: " + totalRamMB + " MB");
+                Console.WriteLine("Memoria usada: no disponible en aquesta versio");
+                Console.WriteLine("Memoria lliure: no disponible en aquesta versio");
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a seemem: " + e.Message);
+                Console.WriteLine("Error a seemem: " + e.Message);
             }
         }
 
@@ -68,6 +102,7 @@ namespace NitroOS
                 int actualSeconds = (RTC.Hour * 3600) + (RTC.Minute * 60) + RTC.Second;
                 int elapsed = actualSeconds - bootSeconds;
 
+                // Si ha passat la mitjanit
                 if (elapsed < 0)
                 {
                     elapsed += 24 * 3600;
@@ -77,11 +112,11 @@ namespace NitroOS
                 int minuts = (elapsed % 3600) / 60;
                 int segons = elapsed % 60;
 
-                EscriureSortida("Temps ences: " + hores + "h " + minuts + "m " + segons + "s");
+                Console.WriteLine("Temps ences: " + hores + "h " + minuts + "m " + segons + "s");
             }
             catch (Exception e)
             {
-                EscriureSortida("Error a tf: " + e.Message);
+                Console.WriteLine("Error a tf: " + e.Message);
             }
         }
     }
